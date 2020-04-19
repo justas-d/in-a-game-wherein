@@ -301,7 +301,7 @@ const to_keep_me_alive = () => {
 
 const loop = async () => {
 
-  await p("You are preparing to play a game");
+  await p("You are preparing to play a game.");
 
   await p("Maybe you have just finished your own, eager to see what others have done with their time.")
 
