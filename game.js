@@ -298,60 +298,65 @@ const to_keep_me_alive = () => {
   })
 };
 
+const loop = async (cont) => {
 
-const loop = async () => {
+  if(cont) {
+    await p("you are preparing to play a game.");
+  }
+  else {
+    await p("You are preparing to play a game.");
+  }
 
-  await p("You are preparing to play a game.");
-
-  await p("Maybe you have just finished your own, eager to see what others have done with their time.")
+  await p("Maybe you have just finished your own, and are now eager to see what others have done with their time.");
 
   await p("You find yourself in a specific state, one that leaves you wanting nothing more but to swiftly sort through this arbitrary set of games."); 
-  await p("You do not expect much from something that is quickly thrown together yet you do not deny yourself the experience of finding a game you enjoy, which you'll later amplify the reach of and/or take note of the nuggets of wisdom embedded within for later use in life.")
+
+  await p("You do not expect much from something that has been quickly thrown together, yet you do not deny yourself the experience of finding a game you enjoy, which you will later amplify the reach of, and perhaps steal the nuggets of wisdom embedded within for later use in life.");
 
   await multiple([
     "As you look through the list, a title stands out. It feels incoherent.",
     `"It Must Not Wither"`
   ]);
 
-  await p("Given the header of the game, you form an image wherein you are asked to manage something that can wither.")
-  await p("When it comes to the 'it', it seems that it has nothing concrete to bind to, leaving you to speculate it is a botanic subject.")
-  await p("The 'must not' immediately gives you an initial insight into what the lose state is.")
+  await p("Given the header of the game, you form an image wherein you are asked to manage something that can wither.");
+  await p("When it comes to the 'it', it seems that it has nothing concrete to bind to, leaving you to speculate it to be botanic subject.");
+  await p("The 'must not' immediately gives you an initial insight into what the lose state is.");
 
-  await p("With time having been invested into analyzing the title, it is too late to ignore the game itself.")
+  await p("With time having been invested into analyzing the title, it is too late to ignore the game itself.");
   await multiple([
     "The game is readied for launch.",
     "You begin playing It Must Not Wither."
   ]);
 
-  await it_must_not_wither()
+  await it_must_not_wither();
 
-  await p("You close It Must Not Wither.")
+  await p("You close It Must Not Wither.");
 
-  await p("It is time to enter a familiar state.")
+  await p("It is time to enter a familiar state.");
 
-  await p("You will find something positive about the game, swiftly write it down, employing a subset of your polite vocabulary which does not ask you to exert too much effort.")
+  await p("You will find something positive about the game, swiftly write it down, employing a subset of your polite vocabulary which does not ask you to exert too much effort.");
 
-  await p("Shortly after, the words will be sent off to somebody who may have been involved in the making of the game, leaving you to continue on with the burden emerging from this seemingly bottomless barrel of games.")
+  await p("Shortly after, the words will be sent off to somebody who may have been involved in the making of the game, leaving you to continue on with the burden emerging from this seemingly bottomless barrel of games.");
 
   await multiple([
     "For the n-th time today, an image surfaces in your mind.",
     "One of writing for the sake of placing down symbols to fill the page, drawing something for the sake of having the tool touch the medium."
-  ]) ;
+  ]);
 
-  await p("It is time to continue.")
+  await p("It is time to continue.");
 
   await multiple([
     "Your eyes dart onto a thumbnail. It looks unfinished.",
     `"To Keep Me Alive"`
   ]);
 
-  await p("You imagine the game taking the form of a mash of genres, resulting in an experience such that a defense from harm, maybe famine, generally - misfortune, is required.");
+  await p("You imagine the game taking the form of a mash of genres, resulting in an experience in which a defense from harm, maybe famine - generally, misfortune - is required.");
 
-  await p("You begin playing To Keep Me Alive.")
+  await p("You begin playing To Keep Me Alive.");
 
   await to_keep_me_alive();
 
-  await p("You close To Keep Me Alive.")
+  await p("You close To Keep Me Alive.");
 
   await p("It is time to repeat the dance. You cannot say it was bad per-se, while being unable to say it was good either.")
 
@@ -361,12 +366,12 @@ const loop = async () => {
 
   await p("Maybe you are reminded of a series of sentences someone said somewhere in some standing situation, seeing a sea of silhouettes silently staring.")
 
-  await p("In your mind surfaces a sequence of letters, or rather, a handle, f6ta63pbc6Q, with an optional ampersand and a 'tee' of two-zero-four.")
+  await p("In your mind surfaces a sequence of letters, or rather, a handle, f6ta63pbc6Q, with an optional ampersand (and a 'tee' of two-zero-four).")
 
   await p("However, it is time to continue.")
 
   await multiple([
-    "A name catches your attention. It doesn't sound like a game.",
+    "A name catches your attention. It does not sound like a game.",
     `"In A Game Wherein"`
   ]);
 
@@ -378,7 +383,7 @@ const loop = async () => {
 
   await p("You begin playing In A Game Wherein");
 
-  await loop();
+  await loop(true);
 };
 
-loop();
+loop(false);
