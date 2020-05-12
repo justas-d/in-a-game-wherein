@@ -178,9 +178,11 @@ const it_must_not_wither = async () => {
 
       if(did_win) {
         title.innerText = "Your plant produced fruit.";
+        btn_water.disabled = true;
       }
       else {
         title.innerText = "Your plant died without producing fruit.";
+        btn_water.disabled = true;
       }
     });
 
@@ -221,7 +223,14 @@ const to_keep_me_alive = () => {
       return Math.floor(Math.random() * Math.floor(max));
     }
 
+    let did_win = false;
+    let did_lose = false;
+
     const update = () => {
+      if(did_win || did_lose) {
+        return;
+      }
+
       energy = Math.max(energy, 0);
       food = Math.max(food, 0);
 
@@ -233,8 +242,6 @@ const to_keep_me_alive = () => {
       el_energy.innerText = "Energy: " + energy;
       el_distance.innerText = "Distance: " + distance + " /10";
 
-      let did_win = false;
-      let did_lose = false;
       if(distance >= 10) {
         did_win = true;
       }
@@ -266,6 +273,10 @@ const to_keep_me_alive = () => {
         else {
           title.innerText = "You failed to get to your destination.";
         }
+
+        btn_scavenge.disabled = true;
+        btn_travel.disabled = true;
+        btn_rest.disabled = true;
       }
     };
 
